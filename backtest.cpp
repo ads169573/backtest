@@ -176,8 +176,8 @@ public:
             {
                 startTime = i;
                 startPrice = close[i];
-                stopLossPoint = stopLoss == -0.01 ? INT_MAX : startPrice * (1 + stopLoss * double(lever) * 1.0);
-                takeProfitPoint = takeProfit == -0.01 ? 0 : startPrice * (1 - takeProfit * double(lever) * 1.0);
+                stopLossPoint = stopLoss == -0.01 ? INT_MAX : startPrice * (1 + stopLoss / double(lever) * 1.0);
+                takeProfitPoint = takeProfit == -0.01 ? 0 : startPrice * (1 - takeProfit / double(lever) * 1.0);
                 liquidationPoint = startPrice * (1 + 1.0 / double(lever));
                 status = 1;
 
